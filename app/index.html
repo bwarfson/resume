@@ -1,8 +1,8 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" ng-app="resumeApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Brad Wight's Resume</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -12,42 +12,434 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/prettyPhoto.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="resumeApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <body ng-controller="MainCtrl">
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">resume</h3>
-      </div>
+    <!-- Start of color wrapper -->
+    <div class="color_wrapper">
 
-      <div ng-view=""></div>
+    </div><!-- End of color wrapper -->
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+    <!-- Start of header wrapper -->
+    <div id="header_wrapper">
+
+        <!-- Start of header -->
+        <div class="header">
+
+            <!-- Start of top logo -->
+            <div id="top_logo">
+                <h1>John Hancock</h1>
+
+            </div><!-- End of top_logo -->
+
+            <!-- Start of top download -->
+            <div id="top_download">
+                <a href="http://themeforest.net/" target="_blank">Download my resume</a>
+
+            </div><!-- End of top download -->
+
+            <!-- Start of about one half first -->
+            <div class="about_one_half_first">
+                <img src="img/photo.png" class="about_me_img" height="177" width="177" alt="me" />
+
+                <h4>iOS Developer</h4>
+
+                <p>Hey there my name is John Hancock - not really. But check out my face, it's the one to the left of this bunch of random letters that I found make words that people can read and then they will be super impressed with my lettering abilities and employ me because I am 'John Hancock' - awesome!</a></p>
+
+                <p><span class="signature">John Hancock</span></p>
+
+            </div><!-- End of about one half first -->
+
+            <!-- Start of about one half -->
+            <div class="about_one_half">
+
+                <!-- Start of one half first -->
+                <div class="one_half_first">
+
+                    <!-- Start of contact me phone -->
+                    <div class="contact_me_phone">
+                        555.555.5555
+
+                    </div><!-- End of contact me phone -->
+
+                </div><!-- End of one half first -->
+
+                <!-- Start of one half -->
+                <div class="one_half">
+
+                    <!-- Start of contact me site -->
+                    <div class="contact_me_site">
+                        <a href="#">www.website.com</a>
+
+                    </div><!-- End of contact me site -->
+
+                </div><!-- End of one half -->
+
+                <!-- Start of one half first -->
+                <div class="one_half_first">
+
+                    <!-- Start of contact me location -->
+                    <div class="contact_me_location">
+                        Urbana, OH
+
+                    </div><!-- End of contact me location -->
+
+                </div><!-- End of one half first -->
+
+                <!-- Start of one half -->
+                <div class="one_half">
+
+                    <!-- Start of contact me email -->
+                    <div class="contact_me_email">
+                        <a href="mailto:info@the_resume_template.com">email@gmail.com</a>
+
+                    </div><!-- End of contact me email -->
+
+                </div><!-- End of one half -->
+
+            </div><!-- End of about one half -->
+
+        </div><!-- End of header -->
+
+        <div class="clear"></div>
+
+    </div><!-- End of header wrapper -->
+
+    <!-- Start of wrapper -->
+    <div class="wrapper">
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+    <!-- Start of full width -->
+    <div class="full_width">
+
+
+        <!-- Start of one half first -->
+        <div class="one_half_first">
+
+            <h6><span class="styled_heading">Skills</span></h6>
+
+            <!-- Start of content -->
+            <div class="content">
+
+                <!-- Start of col -->
+                <div class="col">
+
+                    <!-- Start of skill ul -->
+                    <ul id="skill">
+                        <li><span class="expand dreamweaver"></span><em>Dreamweaver</em></li>
+                        <li><span class="expand photoshop"></span><em>Photoshop</em></li>
+                        <li><span class="expand illustrator"></span><em>Illustrator</em></li>
+                        <li><span class="expand indesign"></span><em>Indesign</em></li>
+                        <li><span class="expand flash"></span><em>Flash</em></li>
+                        <li><span class="expand wordpress"></span><em>WordPress</em></li>
+                        <li><span class="expand html"></span><em>HTML</em></li>
+                        <li><span class="expand css"></span><em>CSS</em></li>
+                    </ul><!-- End of skill ul -->
+
+                </div><!-- End of col -->
+
+            </div><!-- End of content -->
+
+        </div><!-- End of one half first -->
+
+        <!-- Start of one half -->
+        <div class="one_half">
+
+            <h6><span class="styled_heading">Education</span></h6>
+
+            <ul class="education">
+
+                <li><span class="small_heading">College of Better Learning</span>
+
+                    <!-- Start of lgt block -->
+                    <div class="lgt_block">
+                        AUG 2008 - MAY 2010
+
+                    </div><!-- End of lgt block -->
+
+                    <!-- Start of drk block -->
+                    <div class="drk_block">
+                        ASSOCIATES IN DESIGN
+
+                    </div><!-- End of drk block -->
+
+                    <!-- Start of content -->
+                    <div class="content2">
+                        <p>Graduated 2.5yrs early with distinction and honors cause that's how I roll - I knew more actually before attending college than I did after hence the quick turnaround, is anyone actually reading this or just looking at the awesome design, <span class="highlight_text">hopefully both,</span> made you look huh.</p>
+
+                    </div><!-- End of content -->
+
+                </li>
+
+                <li><span class="small_heading">University of Clever Stuffs</span>
+
+                    <!-- Start of lgt block -->
+                    <div class="lgt_block">
+                        AUG 2010 - MAY 2011
+
+                    </div><!-- End of lgt block -->
+
+                    <!-- Start of drk block -->
+                    <div class="drk_block">
+                        ASSOCIATES IN DESIGN
+
+                    </div><!-- End of drk block -->
+
+                    <!-- Start of content -->
+                    <div class="content2">
+                        <p>As a student of clever stuff I exceeded expectations from my neighbour who I don't know. This paragraph writing is fun as I'm absolutely sure no-one reads the content so I can easily type 'chiwawa' which relates to nothing about clever stuffs and it still looks the bomb.</p>
+
+                    </div><!-- End of content -->
+
+                </li>
+
+            </ul>
+
+        </div><!-- End of one half -->
+
+    </div><!-- End of full width -->
+
+    <div class="clear"></div>
+
+    <!-- Start of full width -->
+    <div class="full_width">
+
+        <h6><span class="styled_heading">Work Experience</span></h6>
+
+        <!-- Start of one half first -->
+        <div class="one_half_first">
+
+            <ul class="none">
+
+                <li><span class="small_heading">ABC Company</span>
+
+                    <!-- Start of lgt block -->
+                    <div class="lgt_block">
+                        APR 2011 - PRESENT
+
+                    </div><!-- End of lgt block -->
+
+                    <!-- Start of drk block -->
+                    <div class="drk_block">
+                        SENIOR WEB DEVELOPER
+
+                    </div><!-- End of drk block -->
+
+                    <!-- Start of content -->
+                    <div class="content2">
+                        <p>The ABC Company was an awesome place to work. First in the telephone directory so when I called in sick (which I did often) the number was super easy to find - the phone and all it's buttons on the other hand were the difficult part.</p>
+
+                        <ul class="square">
+                            <li><a href="#">PHP, Jquery development in large dev team</a></li>
+                            <li>Responsible for introduction and planning of new technologies</li>
+                            <li>Quality control responsibilities including creative direction</li>
+                            <li>Personally introduced Gmail to the world</li>
+                        </ul>
+
+                    </div><!-- End of content -->
+
+                </li>
+
+            </ul>
+
+        </div><!-- End of one half first -->
+
+        <!-- Start of one half -->
+        <div class="one_half">
+
+            <ul class="none">
+
+                <li><span class="small_heading">XYZ Company</span>
+
+                    <!-- Start of lgt block -->
+                    <div class="lgt_block">
+                        JUN 2009 - APR 2011
+
+                    </div><!-- End of lgt block -->
+
+                    <!-- Start of drk block -->
+                    <div class="drk_block">
+                        JUNIOR WEB DEVELOPER
+
+                    </div><!-- End of drk block -->
+
+                    <!-- Start of content -->
+                    <div class="content2">
+                        <p>Not sure what else I can say that hasn't been said already about XYZ Company apart from the fact that it contains the last 3 letters of the alphabet - which come to think of it must of been mentioned previously by some random person.</p>
+
+                        <ul class="square">
+                            <li>Invented facebook and groupon over a hacking weekend</li>
+                            <li>Secured financial funding for a small tech company called Apple</li>
+                            <li>Responsible for the growth of Bing search engine</li>
+                            <li>Created a small live chat like system called Twitter</li>
+                        </ul>
+
+                    </div><!-- End of content -->
+
+                </li>
+
+            </ul>
+
+        </div><!-- End of one half -->
+
+    </div><!-- End of full width -->
+
+    <div class="clear"></div>
+
+    <!-- Start of full width -->
+    <div class="full_width">
+
+        <h6><span class="styled_heading">Employment Timeline</span></h6>
+
+        <div class="timeline">
+
+            <!-- width=the length that will display - left=100 less width set ie 100-42=58 etc etc -->
+            <ul class="events">
+                <li class="red" style="width: 40%; left: 60%;">Whistle Marketing</li>
+                <li class="dark" style="width: 35%; left: 25%;">Envato</li>
+                <li class="light" style="width: 25%; left: 0%;">Google</li>
+            </ul> <!-- end .events -->
+
+            <ul class="intervals">
+                <li class="first">2003</li>
+                <li>2007</li>
+                <li>2008</li>
+                <li>2009</li>
+                <li>2010</li>
+                <li>2011</li>
+                <li class="last">2012</li>
+            </ul> <!-- end .intervals -->
+
+        </div> <!-- end .timeline -->
+
+        <div class="clear2"></div>
+
+        <!-- Start of one half first -->
+        <div class="one_half_first">
+
+            <h6><span class="styled_heading">Awards</span></h6>
+
+            <ul class="awards">
+
+                <li><span class="small_heading">University of Bradford Schools</span>
+
+                    <!-- Start of content -->
+                    <div class="content3">
+                        <p>Graduated 2.5yrs early with distinction and honors cause that's how I roll - I knew more actually before attending college than I did after hence the quick turnaround, is anyone actually reading this or just looking at the awesome design, <span class="highlight_text">hopefully both,</span> made you look huh.</p>
+
+                    </div><!-- End of content -->
+
+                </li>
+
+            </ul>
+
+        </div><!-- End of one half first -->
+
+        <!-- Start of one half -->
+        <div class="one_half">
+
+            <h6><span class="styled_heading">Interests</span></h6>
+
+            <ul class="square">
+                <li>Huge movie fan (action / adventure)</li>
+                <li>Activist for anonymous</li>
+                <li>Fine dining and wine collector</li>
+                <li>Travel enthusiast - especially on planet earth</li>
+            </ul>
+
+        </div><!-- End of one half -->
+
+    </div><!-- End of full width -->
+
+    <div class="clear"></div>
+
+
+    <div class="clear2"></div>
+
+    <!-- Start of full width -->
+
+
+
+
+
+    </div><!-- End of wrapper -->
+
+    <div class="clear2"></div>
+
+    <!-- Start of footer wrapper -->
+    <div id="footer_wrapper">
+
+        <!-- Start of footer -->
+        <div class="footer">
+
+            <!-- Start of copyright -->
+            <div class="copyright">
+                &copy; Copyright 2012 <a href="http://www.whistlemarketing.com">WhistleMarketing, Inc.</a>  All Rights Reserved.
+
+            </div><!-- End of copyright -->
+
+            <!-- Start of social section -->
+            <div class="social_section">
+
+                <!-- Start of facebook -->
+                <div class="facebook">
+
+                    <a href="http://facebook.com" target="_blank"></a>
+
+                </div><!-- End of facebook -->
+
+                <!-- Start of flickr -->
+                <div class="flickr">
+
+                    <a href="http://flickr.com" target="_blank"></a>
+
+                </div><!-- End of flickr -->
+
+                <!-- Start of linkedin -->
+                <div class="linkedin">
+
+                    <a href="http://linkedin.com" target="_blank"></a>
+
+                </div><!-- End of linkedin -->
+
+                <!-- Start of tweets -->
+                <div class="tweets">
+
+                    <a href="http://twitter.com" target="_blank"></a>
+
+                </div><!-- End of tweets -->
+
+                <!-- Start of deviant -->
+                <div class="deviant">
+
+                    <a href="http://www.deviantart.com/" target="_blank"></a>
+
+                </div><!-- End of deviant -->
+
+                <!-- Start of dribbble -->
+                <div class="dribbble">
+
+                    <a href="http://dribbble.com/" target="_blank"></a>
+
+                </div><!-- End of dribbble -->
+
+            </div><!-- End of social section -->
+
+        </div><!-- End of footer -->
+
+    </div><!-- End of footer wrapper -->
+
+    <!-- Start of color wrapper -->
+    <div class="color_wrapper">
+
+    </div><!-- End of color wrapper -->
+
+
+
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -56,20 +448,14 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/angular.min.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
         <!-- endbuild -->
 </body>
 </html>
