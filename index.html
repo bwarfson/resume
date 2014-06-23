@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="resumeApp">
-  
+
   <head>
     <meta charset="utf-8">
-    <title>John Smith - Curriculum Vitae</title>
+    <title>Brad Wight - Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le styles -->
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
-    
+
     <!-- Fallback for NoScript -->
     <noscript>
     <style type="text/css">
@@ -19,7 +19,7 @@
      }
     </style>
     </noscript>
-	
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
@@ -34,39 +34,41 @@
   </head>
 
   <body>
-		<section class="container" ng-controller="MainCtrl">
+		<section class="container" ng-controller="MainController">
 
 			<!-- Header -->
 			<header class="row-fluid">
 				<div class="title span7">
-					<img src="assets/img/profile.jpg" title="That`s me!" alt="My Profile"/>
+					<img ng-src="{{data.header.image}}" title="That`s me!" alt="My Profile"/>
 					<h1>{{data.header.name}}</h1>
 					<h2>{{data.header.title}}</h2>
 				</div>
 				<div class="social offset1 span4">
 					<ul>
 						<li><i class="icon-home"></i>{{data.header.location}}</li>
-						<li><i class="icon-envelope-alt"></i>{{data.header.email}}</li>
-						<li><i class="icon-phone"></i>{{data.header.phone}}</li>
 
+						<li><i class="icon-phone"></i>{{data.header.phone}}</li>
+                        <li><i class="icon-envelope-alt"></i>{{data.header.email}}</li>
+                        <li></li>
+                        <br>
 						<li>
-                        <a href="www.linkedin.com/in/bradwight/"><i class="icon-linkedin"></i></a>
-                        <a href="#" ><i class="icon-twitter" ></i></a>
-						<a href="#" ><i class="icon-facebook" ></i></a>
-						<a href="#" ><i class="icon-google-plus" ></i></a>
-						<a href="#" ><i class="icon-github" ></i></a></li>
+                            <a ng-href="{{data.header.linkedin}}"><i class="icon-linkedin"></i></a>
+                            <a ng-href="{{data.header.twitter}}" ><i class="icon-twitter" ></i></a>
+                            <a ng-href="{{data.header.facebook}}" ><i class="icon-facebook" ></i></a>
+                            <a ng-href="{{data.header.google}}" ><i class="icon-google-plus" ></i></a>
+                            <a ng-href="{{data.header.github}}" ><i class="icon-github" ></i></a>
+                        </li>
 					</ul>
-				</div>	
+				</div>
 			</header>
 
 			<!-- Welcome Text -->
 			<article class="row-fluid">
 				<header class="span3">
-					<h3>Hello!</h3>
+					<h3>Summary</h3>
 				</header>
 				<div class="span9 ">
-					<p class="welcome">"Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away." <br>
-					<p class="auth"> <i>Antoine de Saint-Exupery</i>  </p>
+					<p class="">{{data.header.bio}} <br>
 				</div>
 			</article>
 
@@ -78,18 +80,12 @@
 				<div class="span9">
 					<div class="row-fluid skills">
 						<ul class="span6">
-							<li><h4>Programming</h4></li>
-							<li><strong>css</strong> - 3 years experience</li>
-							<li><strong>html</strong> - Lorem ipsum dolor sit amet</li>
-							<li><strong>php</strong> - Lorem ipsum dolor sit amet</li>
-							<li><strong>javascript</strong> - Lorem ipsum dolor sit amet</li>
+							<li><h4>Programming Languages / Formats</h4></li>
+                            <li ng-repeat="skill in data.skills.programming"><strong>{{skill.title}}</strong> - {{skill.content}}</li>
 						</ul>
 						<ul class="span6">
-							<li><h4>Languages</h4></li>
-							<li><strong>English</strong> - Fluent </li>
-							<li><strong>Russian</strong> - Fluent in writing</li>
-							<li><strong>Spanish</strong> - Lorem ipsum dolor sit amet</li>
-							<li><strong>Esperanto</strong> - Lorem ipsum dolor sit amet</li>
+							<li><h4>Languages / Frameworks / Applications</h4></li>
+                            <li ng-repeat="skill in data.skills.libframe"><strong>{{skill.title}}</strong> - {{skill.content}}</li>
 						</ul>
 					</div>
 				</div>
@@ -101,15 +97,10 @@
 					<h3>Education</h3>
 				</header>
 				<div class="span9">
-					<h4>High School</h4>
-					<h5>1943-2008</h5>
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua.</p>
-					<h4>University</h4>
-					<h5>2008-2008</h5>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua.</p>
-					<h4>Second University</h4>
-					<h5>2008-2010</h5>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua.</p>
+					<h4>{{data.education.university}}</h4>
+					<h5>{{data.education.year}}</h5>
+                    <h5>Major: {{data.education.major}}</h5>
+                    <h5>Degree: {{data.education.degree}}</h5>
 				</div>
 			</article>
 
@@ -119,14 +110,27 @@
 					<h3>Work Experience</h3>
 				</header>
 				<div class="span9">
-					<h4>My First Job </h4>
-					<h5>1960-2008</h5>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua.</p>
-					<h4>Second Job</h4>
-					<h5>2008-2013</h5>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua.</p>
+                    <span ng-repeat="item in data.experience">
+                        <h4>{{item.title}} | {{item.company}}</h4>
+                        <h5>{{item.date}}</h5>
+                        <ul>
+                            <li ng-repeat="i in item.items">- {{i.title}}</li>
+                        </ul>
+					</span>
 				</div>
 			</article>
+
+            <!-- Certifications -->
+            <article class="row-fluid">
+                <header class="span3">
+                    <h3>Certifications</h3>
+                </header>
+                <div class="span9">
+                    <ul>
+                        <li ng-repeat="item in data.certifications">- {{item.title}}</li>
+                    </ul>
+                </div>
+            </article>
 
 			<!-- Interests -->
 			<article class="row-fluid">
@@ -134,20 +138,15 @@
 					<h3>Interests</h3>
 				</header>
 				<div class="span9">
-					<h4>Traveling</h4>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua</p>
-					<h4>Reading</h4>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua</p>
-					<h4>Books</h4>
-					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumyeirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua</p>
+                    <span ng-repeat="item in data.interests">{{item.title}} </span>
 				</div>
 			</article>
 
 			<!-- Footer -->
 			<footer>
-				&copy; 2013 John Smith 
+				&copy; 2014 Brad Wight
 				<a href="#">Download as PDF</a> | <a href="#" onclick="javascript:window.print();">Print</a> | <a href="#top">To top <i class="icon-arrow-up"></i></a>
-			
+
 			</footer>
 	</section>
 
