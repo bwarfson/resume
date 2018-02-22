@@ -81,8 +81,7 @@ app.controller('MainController', function($scope){
         education: {
             degree: 'Bachelor of Science',
             year: '2008 - 2011',
-            university: 'Boise State University',
-            major: 'Information Technology'
+            university: 'Boise State University'
         },
         experience: [
             {
